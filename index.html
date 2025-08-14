@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Personal - Sol Magali Baigorria</title>
+  <style>
+    :root { --color-principal: #333; --color-secundario: #fff; --color-acento: #007acc; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header { background: var(--color-principal); color: var(--color-secundario); position: sticky; top: 0; z-index: 1000; }
+    nav ul { display: flex; justify-content: center; list-style: none; margin: 0; padding: 10px; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: var(--color-secundario); text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { color: var(--color-acento); }
+    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+    h2 { border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+    .projects, .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { border: 1px solid #ddd; border-radius: 5px; overflow: hidden; background: #f9f9f9; }
+    .card img { width: 100%; height: auto; }
+    .card-content { padding: 15px; }
+    form { display: grid; gap: 10px; }
+    input, textarea, button { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: var(--color-acento); color: white; border: none; cursor: pointer; }
+    button:hover { background: #005a99; }
+    footer { background: var(--color-principal); color: white; text-align: center; padding: 20px; }
+    .social a { color: white; margin: 0 10px; }
+    @media (max-width: 600px) { nav ul { flex-direction: column; } }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="presentacion">
+    <h2>Presentación Personal</h2>
+    <img src="avatar.jpg" alt="Foto de Juan Pérez" width="150">
+    <h3>Juan Pérez</h3>
+    <p><strong>Desarrollador Web Junior</strong></p>
+    <p>Apasionado por la creación de experiencias web modernas, con conocimientos en HTML, CSS, JavaScript y Git. Comprometido con el aprendizaje continuo y la calidad del código.</p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="proyecto1.jpg" alt="Proyecto 1">
+        <div class="card-content">
+          <h3>Proyecto 1</h3>
+          <p>Sitio web responsive para una cafetería local.</p>
+          <a href="#">Ver proyecto</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="proyecto2.jpg" alt="Proyecto 2">
+        <div class="card-content">
+          <h3>Proyecto 2</h3>
+          <p>Aplicación de tareas con JavaScript y almacenamiento local.</p>
+          <a href="#">Ver proyecto</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="proyecto3.jpg" alt="Proyecto 3">
+        <div class="card-content">
+          <h3>Proyecto 3</h3>
+          <p>Portfolio personal con modo oscuro y claro.</p>
+          <a href="#">Ver proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiencia</h2>
+    <ul>
+      <li>Empresa ABC - Desarrollador Web (2022 - 2023)</li>
+      <li>Prácticas en XYZ Studio (2021)</li>
+    </ul>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills">
+      <div class="card">
+        <div class="card-content">
+          <h4>Tecnologías</h4>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/usuario" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/usuario" target="_blank">LinkedIn</a>
+      <a href="cv.pdf" download>Descargar CV</a>
+    </div>
+    <p>&copy; 2025 Juan Pérez</p>
+  </footer>
+</body>
+</html>
